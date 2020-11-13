@@ -1,0 +1,40 @@
+{
+  "string": [
+    {
+      "name": "app_name",
+      "value": "PhotoView"
+    },
+    {
+      "name": "mainability_description",
+      "value": "hap sample empty page"
+    },
+    {
+      "name": "transitionability_description",
+      "value": "hap sample empty page"
+    },
+    {
+      "name": "transitiontoability_description",
+      "value": "hap sample empty page"
+    },
+    {
+      "name": "coilsampleability_description",
+      "value": "hap sample empty page"
+    },
+    {
+      "name": "simplesampleability_description",
+      "value": "hap sample empty page"
+    },
+    {
+      "name": "mainability_description",
+      "value": "hap sample empty page"
+    },
+    {
+      "name": "rotationsampleability_description",
+      "value": "hap sample empty page"
+    },
+    {
+      "name": "activitytransitionbility_description",
+      "value": "hap sample empty page"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "app": {
+    "bundleName": "com.github.chrisbanes.photoview.sample",
+    "vendor": "github",
+    "version": {
+      "code": 1,
+      "name": "1.0"
+    },
+    "apiVersion": {
+      "compatible": 3,
+      "target": 3
+    }
+  },
+  "deviceConfig": {},
+  "module": {
+    "package": "com.github.chrisbanes.photoview.sample",
+    "name": ".PhotoView",
+    "reqCapabilities": [
+      "video_support"
+    ],
+    "deviceType": [
+      "tv"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "entry",
+      "moduleType": "entry"
+    },
+    "abilities": [
+      {
+        "orientation": "landscape",
+        "formEnabled": false,
+        "name": "com.github.chrisbanes.photoview.sample.TransitionAbility",
+        "icon": "$media:icon",
+        "description": "$string:transitionability_description",
+        "label": "entry",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "landscape",
+        "formEnabled": false,
+        "name": "com.github.chrisbanes.photoview.sample.TransitionToAbility",
+        "icon": "$media:icon",
+        "description": "$string:transitiontoability_description",
+        "label": "entry",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "landscape",
+        "formEnabled": false,
+        "name": "com.github.chrisbanes.photoview.sample.CoilSampleAbility",
+        "icon": "$media:icon",
+        "description": "$string:coilsampleability_description",
+        "label": "entry",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "landscape",
+        "formEnabled": false,
+        "name": "com.github.chrisbanes.photoview.sample.SimpleSampleAbility",
+        "icon": "$media:icon",
+        "description": "$string:simplesampleability_description",
+        "label": "entry",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ],
+        "orientation": "landscape",
+        "formEnabled": false,
+        "name": "com.github.chrisbanes.photoview.sample.LauncherAbility",
+        "icon": "$media:icon",
+        "description": "$string:mainability_description",
+        "label": "entry",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "landscape",
+        "formEnabled": false,
+        "name": "com.github.chrisbanes.photoview.sample.RotationSampleAbility",
+        "icon": "$media:icon",
+        "description": "$string:rotationsampleability_description",
+        "label": "entry",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "landscape",
+        "formEnabled": false,
+        "name": "com.github.chrisbanes.photoview.sample.ActivityTransitionbility",
+        "icon": "$media:icon",
+        "description": "$string:activitytransitionbility_description",
+        "label": "entry",
+        "type": "page",
+        "launchType": "standard"
+      }
+    ]
+  }
+}
