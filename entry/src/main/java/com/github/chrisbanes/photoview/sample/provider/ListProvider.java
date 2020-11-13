@@ -7,7 +7,7 @@ import ohos.app.Context;
 /**
  * 适配器
  */
-public class ListProvider extends RecycleItemProvider {
+public class ListProvider extends BaseItemProvider {
 
     private String[] data;
     private LayoutScatter layoutScatter;

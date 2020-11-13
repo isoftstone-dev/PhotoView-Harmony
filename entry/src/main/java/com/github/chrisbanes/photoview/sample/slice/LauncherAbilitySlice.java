@@ -69,7 +69,14 @@ public class LauncherAbilitySlice extends AbilitySlice {
 //                    clazz = CoilSampleActivity.class;
                     break;
                 case 5:
-//                    clazz = ActivityTransitionActivity.class;
+                    Intent intent5 = new Intent();
+                    Operation operation5 = new Intent.OperationBuilder()
+                            .withDeviceId("")
+                            .withBundleName("com.github.chrisbanes.photoview.sample")
+                            .withAbilityName("com.github.chrisbanes.photoview.sample.TransitionAbility")
+                            .build();
+                    intent5.setOperation(operation5);
+                    startAbility(intent5);
                     break;
                 case 6:
 //                    clazz = ImmersiveActivity.class;
