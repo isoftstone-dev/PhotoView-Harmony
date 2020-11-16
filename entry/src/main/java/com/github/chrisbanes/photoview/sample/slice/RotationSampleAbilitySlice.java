@@ -23,7 +23,8 @@ public class RotationSampleAbilitySlice extends AbilitySlice {
 
     private PhotoView mPhotoView;
 
-    private int count = 0;
+    private int right = 0;
+    private int left = 0;
 
     @Override
     public void onStart(Intent intent) {
@@ -43,7 +44,8 @@ public class RotationSampleAbilitySlice extends AbilitySlice {
         mPhotoView.setImageAndDecodeBounds(ResourceTable.Media_wallpaper);
 
         Text text = new Text(this);
-        text.setLayoutConfig(config);
+        text.setWidth(150);
+        text.setHeight(80);
         text.setText("向右旋转10°");
         text.setTextColor(new Color(0xFF000000));
         text.setTextSize(25);
@@ -51,7 +53,8 @@ public class RotationSampleAbilitySlice extends AbilitySlice {
         myLayout.addComponent(text);
 
         Text text2 = new Text(this);
-        text2.setLayoutConfig(config);
+        text2.setWidth(150);
+        text2.setHeight(80);
         text2.setText("向左旋转10°");
         text2.setTextColor(new Color(0xFF000000));
         text2.setTextSize(25);
@@ -61,14 +64,15 @@ public class RotationSampleAbilitySlice extends AbilitySlice {
         super.setUIContent(myLayout);
 
         text.setClickedListener(component -> {
-            count += 10;
+            right += 10;
             AnimatorProperty anim = new AnimatorProperty(mPhotoView);
-            anim.rotate(count).setDuration(1000).start();
+            anim.rotate(right).setDuration(1000).start();
         });
 
         text2.setClickedListener(component -> {
+            left -= 10;
             AnimatorProperty anim = new AnimatorProperty(mPhotoView);
-            anim.rotate(-10).setDuration(1000).start();
+            anim.rotate(left).setDuration(1000).start();
         });
 
     }
