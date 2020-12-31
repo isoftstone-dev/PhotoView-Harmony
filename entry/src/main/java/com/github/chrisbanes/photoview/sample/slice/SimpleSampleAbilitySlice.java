@@ -5,6 +5,7 @@ import com.github.chrisbanes.photoview.sample.ResourceTable;
 import ohos.aafwk.ability.AbilitySlice;
 import ohos.aafwk.content.Intent;
 
+import ohos.agp.colors.HslColor;
 import ohos.agp.components.*;
 import ohos.agp.components.DirectionalLayout.LayoutConfig;
 import ohos.agp.colors.RgbColor;
@@ -15,6 +16,7 @@ import ohos.agp.utils.Rect;
 import ohos.agp.utils.TextAlignment;
 import ohos.agp.window.dialog.ToastDialog;
 import ohos.app.Context;
+import ohos.eventhandler.EventHandler;
 import ohos.global.resource.Element;
 import ohos.multimodalinput.event.TouchEvent;
 
@@ -55,6 +57,7 @@ public class SimpleSampleAbilitySlice extends AbilitySlice {
         mPhotoView.setHeight(300);
         myLayout.addComponent(mPhotoView);
 
+
         mCurrMatrixTv = new Text(this);
         mCurrMatrixTv.setLayoutConfig(config);
         mCurrMatrixTv.setText("Hello World");
@@ -68,6 +71,37 @@ public class SimpleSampleAbilitySlice extends AbilitySlice {
 //        mPhotoView.setOnMatrixChangeListener(new MatrixChangeListener());
 //        mPhotoView.setOnPhotoTapListener(new PhotoTapListener());
 //        mPhotoView.setOnSingleFlingListener(new SingleFlingListener());
+//        mCurrMatrixTv = new Text(this);
+//        mCurrMatrixTv.setTextColor(new Color(0xFF000000));
+//        mCurrMatrixTv.setTextSize(25);
+//        myLayout.addComponent(mCurrMatrixTv);
+//        super.setUIContent(myLayout);
+
+//        Text center = new Text(this);
+//        center.setWidth(100);
+//        center.setHeight(60);
+//        center.setTextColor(new Color(0xFF000000));
+//        center.setTextSize(25);
+//        center.setText("Change to CENTER");
+//        myLayout.addComponent(center);
+//        super.setUIContent(myLayout);
+//
+//        center.setClickedListener(component -> mPhotoView.setScaleMode(Image.ScaleMode.CENTER));
+//
+//        Text zoomCenter = new Text(this);
+//        zoomCenter.setWidth(100);
+//        zoomCenter.setHeight(60);
+//        zoomCenter.setTextColor(new Color(0xFF000000));
+//        zoomCenter.setTextSize(25);
+//        zoomCenter.setText("Change to ZOOM_CENTER");
+//        myLayout.addComponent(zoomCenter);
+//        super.setUIContent(myLayout);
+//
+//        zoomCenter.setClickedListener(component -> mPhotoView.setScaleMode(Image.ScaleMode.ZOOM_CENTER));
+
+
+
+
 
 //        Toolbar toolbar = findViewById(R.id.toolbar);
 //        toolbar.setTitle("Simple Sample");
@@ -144,6 +178,23 @@ public class SimpleSampleAbilitySlice extends AbilitySlice {
 //        });
 //        mCurrMatrixTv =(Text)findComponentById(ResourceTable.Id_tv_current_matrix);
 //
+        mPhotoView.setImageAndDecodeBounds(ResourceTable.Media_wallpaper);
+//
+//        // Lets attach some listeners, not required though!
+        mPhotoView.setOnMatrixChangeListener(new MatrixChangeListener());
+        mPhotoView.setOnPhotoTapListener(new PhotoTapListener());
+        mPhotoView.setOnSingleFlingListener(new SingleFlingListener());
+
+//        EventHandler handler = EventHandler.current();
+//        handler.postTask(new Runnable() {
+//
+//            @Override
+//            public void run() {
+//                int width = mPhotoView.getWidth();
+//                int height = mPhotoView.getHeight();
+//            }
+//
+//        });
 
     }
 

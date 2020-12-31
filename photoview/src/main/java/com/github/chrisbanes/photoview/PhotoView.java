@@ -106,14 +106,15 @@ public class PhotoView extends Image implements Component.TouchEventListener {
         attacher.setClickedListener(listener);
     }
 
-    @Override
-    public void setScaleMode(ScaleMode scaleMode) {
-        if (attacher == null) {
-            pendingScaleMode = scaleMode;
-        } else {
-            attacher.setScaleMode(scaleMode);
-        }
-    }
+//    @Override
+//    public void setScaleMode(ScaleMode scaleMode) {
+//        super.setScaleMode(scaleMode);
+//        if (attacher == null) {
+//            pendingScaleMode = scaleMode;
+//        } else {
+//            attacher.setScaleMode(scaleMode);
+//        }
+//    }
 
     @Override
     public void setImageElement(Element element) {
@@ -173,8 +174,12 @@ public class PhotoView extends Image implements Component.TouchEventListener {
         return false;
     }
 
-    public void setRotationTo(float rotationDegree) {
-        attacher.setRotationTo(rotationDegree);
+//    public void setRotationTo(float rotationDegree) {
+//        attacher.setRotationTo(rotationDegree);
+//    }
+
+    public void setRotationTo(int rotationDegree, long duration) {
+        attacher.setRotationTo(rotationDegree, duration);
     }
 
     public void setRotationBy(float rotationDegree) {
@@ -331,9 +336,14 @@ public class PhotoView extends Image implements Component.TouchEventListener {
 
                 }
 
+
                 HiLog.error(label,"touchNum:"+touchNum,
                         "wigth:"+component.getWidth()+"/"+"height:"+component.getHeight());
                 // TODO 手指拖拽缩放，因为无实体机，所以暂时无法测试
+
+                break;
+            // TODO 手指拖拽缩放，因为无实体机，所以暂时无法测试
+
 //            case TouchEvent.OTHER_POINT_DOWN:
 //            case TouchEvent.POINT_MOVE:
 //                component.setWidth(component.getWidth() + (int) component.getScaleX());

@@ -17,6 +17,7 @@ package com.github.chrisbanes.photoview;
 
 
 import com.github.chrisbanes.photoview.copy.android.Interpolator;
+import ohos.agp.animation.AnimatorProperty;
 import ohos.agp.components.Component;
 import ohos.agp.components.ComponentParent;
 import ohos.agp.components.DragInfo;
@@ -300,6 +301,11 @@ public class PhotoViewAttacher implements Component.TouchEventListener,
     public void setRotationTo(float degrees) {
 //        mSuppMatrix.setRotate(degrees % 360);
         checkAndDisplayMatrix();
+    }
+
+    public void setRotationTo(int degrees,long duration) {
+        AnimatorProperty anim = new AnimatorProperty(mImage);
+        anim.rotate(degrees).setDuration(duration).start();
     }
 
     public void setRotationBy(float degrees) {
@@ -845,7 +851,7 @@ public class PhotoViewAttacher implements Component.TouchEventListener,
 
     private class FlingRunnable implements Runnable {
 
-//        private final OverScroller mScroller;
+        //        private final OverScroller mScroller;
         private int mCurrentX, mCurrentY;
 
         public FlingRunnable(Context context) {
