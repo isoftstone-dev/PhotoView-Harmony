@@ -10,5 +10,5 @@ ohos {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar','*.har'])
     testCompile'junit:junit:4.12'
-    implementation project(":photoview")
+//    implementation project(":photoview")
 }

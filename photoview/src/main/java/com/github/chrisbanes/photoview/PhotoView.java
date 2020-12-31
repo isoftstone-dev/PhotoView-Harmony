@@ -313,19 +313,19 @@ public class PhotoView extends Image implements Component.TouchEventListener {
                 } else {
                     touchNum+=1;
                     switch (touchNum){
-                        case 2:
+                        case 1:
 //                            orgWidth=component.getWidth();
 //                            orgHight=component.getHeight();
                             component.setWidth(component.getWidth()*2);
                             component.setHeight(component.getHeight()*2);
                             break;
-                        case 4:
+                        case 2:
 //                            component.setWidth(orgWidth * 4);
 //                            component.setHeight(orgHight * 4);
                             component.setWidth(component.getWidth()*2);
                             component.setHeight(component.getHeight()*2);
                             break;
-                        case 6:
+                        case 3:
                             touchNum=0;
 //                            component.setWidth(orgWidth);
 //                            component.setHeight(orgHight);
