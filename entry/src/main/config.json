@@ -14,7 +14,7 @@
   "deviceConfig": {},
   "module": {
     "package": "com.github.chrisbanes.photoview.sample",
-    "name": ".PhotoView",
+    "name": ".Photoview",
     "reqCapabilities": [
       "video_support"
     ],

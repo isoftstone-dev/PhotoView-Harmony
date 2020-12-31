@@ -23,6 +23,8 @@ import ohos.agp.components.element.Element;
 import ohos.agp.utils.Matrix;
 import ohos.agp.utils.Rect;
 import ohos.app.Context;
+import ohos.hiviewdfx.HiLog;
+import ohos.hiviewdfx.HiLogLabel;
 import ohos.media.image.PixelMap;
 import ohos.multimodalinput.event.TouchEvent;
 import ohos.utils.net.Uri;
@@ -36,6 +38,7 @@ public class PhotoView extends Image implements Component.TouchEventListener {
 
     private PhotoViewAttacher attacher;
     private ScaleMode pendingScaleMode;
+    private HiLogLabel label=new HiLogLabel(HiLog.ERROR,00*01001,"test");
 
     public PhotoView(Context context) {
         this(context, null);
@@ -62,6 +65,9 @@ public class PhotoView extends Image implements Component.TouchEventListener {
         }
         setTouchEventListener(this);
     }
+
+
+
 
     /**
      * Get the current {@link PhotoViewAttacher} for this view. Be wary of holding on to references
@@ -290,7 +296,9 @@ public class PhotoView extends Image implements Component.TouchEventListener {
     }
 
     private long exitTime;
-
+    private int orgWidth;
+    private int orgHight;
+    private int touchNum=0;
     @Override
     public boolean onTouchEvent(Component component, TouchEvent touchEvent) {
         switch (touchEvent.getAction()) {
@@ -298,14 +306,33 @@ public class PhotoView extends Image implements Component.TouchEventListener {
                 if ((System.currentTimeMillis() - exitTime) > 1000) {
                     exitTime = System.currentTimeMillis();
                 } else {
-                    if (component.getWidth() > 1600) {
-                        component.setWidth(800);
-                        component.setHeight(400);
-                    } else {
-                        component.setWidth(component.getWidth() * 2);
-                        component.setHeight(component.getHeight() * 2);
+                    touchNum+=1;
+                    switch (touchNum){
+                        case 2:
+//                            orgWidth=component.getWidth();
+//                            orgHight=component.getHeight();
+                            component.setWidth(component.getWidth()*2);
+                            component.setHeight(component.getHeight()*2);
+                            break;
+                        case 4:
+//                            component.setWidth(orgWidth * 4);
+//                            component.setHeight(orgHight * 4);
+                            component.setWidth(component.getWidth()*2);
+                            component.setHeight(component.getHeight()*2);
+                            break;
+                        case 6:
+                            touchNum=0;
+//                            component.setWidth(orgWidth);
+//                            component.setHeight(orgHight);
+                            component.setWidth(component.getWidth()/4);
+                            component.setHeight(component.getHeight()/4);
+                            break;
                     }
+
                 }
+
+                HiLog.error(label,"touchNum:"+touchNum,
+                        "wigth:"+component.getWidth()+"/"+"height:"+component.getHeight());
                 // TODO 手指拖拽缩放，因为无实体机，所以暂时无法测试
 //            case TouchEvent.OTHER_POINT_DOWN:
 //            case TouchEvent.POINT_MOVE:
@@ -315,5 +342,9 @@ public class PhotoView extends Image implements Component.TouchEventListener {
         }
         return true;
     }
+
+
+
+
 
 }

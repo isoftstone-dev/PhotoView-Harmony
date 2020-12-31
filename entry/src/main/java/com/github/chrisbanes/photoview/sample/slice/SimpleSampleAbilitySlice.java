@@ -50,10 +50,9 @@ public class SimpleSampleAbilitySlice extends AbilitySlice {
         myLayout.setBackground(element);
 
         mPhotoView = new PhotoView(this);
-//        mPhotoView.setWidth(LayoutConfig.MATCH_CONTENT);
-//        mPhotoView.setHeight(LayoutConfig.MATCH_CONTENT);
-        mPhotoView.setWidth(800);
-        mPhotoView.setHeight(400);
+        mPhotoView.setImageAndDecodeBounds(ResourceTable.Media_wallpaper);
+        mPhotoView.setWidth(300);
+        mPhotoView.setHeight(300);
         myLayout.addComponent(mPhotoView);
 
         mCurrMatrixTv = new Text(this);
@@ -64,6 +63,11 @@ public class SimpleSampleAbilitySlice extends AbilitySlice {
         mCurrMatrixTv.setTextAlignment(TextAlignment.CENTER);
         myLayout.addComponent(mCurrMatrixTv);
         super.setUIContent(myLayout);
+//
+//        // Lets attach some listeners, not required though!
+//        mPhotoView.setOnMatrixChangeListener(new MatrixChangeListener());
+//        mPhotoView.setOnPhotoTapListener(new PhotoTapListener());
+//        mPhotoView.setOnSingleFlingListener(new SingleFlingListener());
 
 //        Toolbar toolbar = findViewById(R.id.toolbar);
 //        toolbar.setTitle("Simple Sample");
@@ -140,13 +144,11 @@ public class SimpleSampleAbilitySlice extends AbilitySlice {
 //        });
 //        mCurrMatrixTv =(Text)findComponentById(ResourceTable.Id_tv_current_matrix);
 //
-        mPhotoView.setImageAndDecodeBounds(ResourceTable.Media_wallpaper);
-//
-//        // Lets attach some listeners, not required though!
-        mPhotoView.setOnMatrixChangeListener(new MatrixChangeListener());
-        mPhotoView.setOnPhotoTapListener(new PhotoTapListener());
-        mPhotoView.setOnSingleFlingListener(new SingleFlingListener());
+
     }
+
+
+
 
 
     private class PhotoTapListener implements OnPhotoTapListener {
@@ -182,10 +184,6 @@ public class SimpleSampleAbilitySlice extends AbilitySlice {
         }
     }
 
-    @Override
-    public void onActive() {
-        super.onActive();
-    }
 
     @Override
     public void onForeground(Intent intent) {

@@ -1,6 +1,6 @@
 package com.github.chrisbanes.photoview.sample;
 
-import com.github.chrisbanes.photoview.PhotoView;
+
 import com.github.chrisbanes.photoview.sample.slice.SimpleSampleAbilitySlice;
 import ohos.aafwk.ability.Ability;
 import ohos.aafwk.content.Intent;

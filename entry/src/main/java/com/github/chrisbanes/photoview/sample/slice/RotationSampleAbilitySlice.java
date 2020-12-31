@@ -42,7 +42,6 @@ public class RotationSampleAbilitySlice extends AbilitySlice {
         mPhotoView.setHeight(400);
         myLayout.addComponent(mPhotoView);
         mPhotoView.setImageAndDecodeBounds(ResourceTable.Media_wallpaper);
-
         Text text = new Text(this);
         text.setWidth(150);
         text.setHeight(80);
